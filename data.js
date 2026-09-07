@@ -1,0 +1,33 @@
+const NODES = [
+  { id: "memory", label: "Holographic\nMemory", kind: "core", r: 86, x: 420, y: 340, blurb: "Working memory of the household system." },
+  { id: "doctrine", label: "Doctrine", kind: "doctrine", r: 42, x: 420, y: 120, blurb: "Permanent constraint. Governs Hermes." },
+  { id: "d1", label: "", kind: "doctrine", r: 16, x: 330, y: 150, blurb: "Creed / short law." },
+  { id: "d2", label: "", kind: "doctrine", r: 16, x: 510, y: 150, blurb: "Verification rite." },
+  { id: "d3", label: "", kind: "doctrine", r: 14, x: 455, y: 210, blurb: "Confession and learning." },
+  { id: "scribe", label: "Scribe", kind: "agent", r: 28, x: 300, y: 210, blurb: "Writes durable notes." },
+  { id: "herald", label: "Herald", kind: "agent", r: 28, x: 370, y: 205, blurb: "Outbound voice." },
+  { id: "budgetbot", label: "Budgetbot", kind: "agent", r: 30, x: 500, y: 195, blurb: "Household budget loop." },
+  { id: "pcfo", label: "PersonalCFO", kind: "agent", r: 32, x: 590, y: 230, blurb: "Cash, accounts, monthly close." },
+  { id: "cos", label: "Chief of\nStaff", kind: "agent", r: 32, x: 640, y: 300, blurb: "Routes family-office work." },
+  { id: "codex", label: "Codex", kind: "agent", r: 30, x: 630, y: 370, blurb: "Coding and hatch surface." },
+  { id: "hermes", label: "Hermes", kind: "agent", r: 44, x: 560, y: 330, blurb: "Root agent. Doctrine governs it." },
+  { id: "divorce", label: "Divorcebot", kind: "agent", r: 32, x: 600, y: 430, blurb: "Case file and calendar." },
+  { id: "taxbot", label: "Taxbot", kind: "agent", r: 28, x: 520, y: 450, blurb: "Filings and estimates." },
+  { id: "sched", label: "Schedulebot", kind: "agent", r: 30, x: 400, y: 455, blurb: "Calendar and reminders." },
+  { id: "scout", label: "Scout", kind: "agent", r: 26, x: 300, y: 430, blurb: "Looks ahead." },
+  { id: "sentinel", label: "Sentinel", kind: "agent", r: 30, x: 250, y: 370, blurb: "Guardrail." },
+  { id: "p1", label: "", kind: "shard", r: 14, x: 540, y: 250, blurb: "Session thread." },
+  { id: "p2", label: "", kind: "shard", r: 12, x: 500, y: 280, blurb: "Profile facts." },
+  { id: "p3", label: "", kind: "shard", r: 13, x: 480, y: 400, blurb: "Corrections." },
+  { id: "p4", label: "", kind: "shard", r: 12, x: 455, y: 430, blurb: "Findings." },
+  { id: "fs", label: "File\nSystem", kind: "infra", r: 38, x: 400, y: 540, blurb: "On-disk tree." },
+  { id: "cfg", label: "Config\n& DB", kind: "infra", r: 32, x: 520, y: 560, blurb: "config.yaml and SQLite." },
+  { id: "f1", label: "", kind: "file", r: 16, x: 330, y: 600, blurb: "~/.hermes/profiles/." },
+  { id: "f2", label: "", kind: "file", r: 16, x: 380, y: 630, blurb: "Weekly review markdown." },
+  { id: "f3", label: "", kind: "file", r: 16, x: 450, y: 640, blurb: "Findings map." },
+  { id: "f4", label: "", kind: "file", r: 16, x: 580, y: 520, blurb: "SOUL.md / AGENTS.md." },
+  { id: "f5", label: "", kind: "file", r: 16, x: 630, y: 500, blurb: "LEARN.md." },
+  { id: "f6", label: "", kind: "file", r: 16, x: 660, y: 560, blurb: "VERIFY.md." }
+];
+const EDGES = [["doctrine","memory"],["doctrine","d1"],["doctrine","d2"],["doctrine","d3"],["doctrine","scribe"],["doctrine","herald"],["doctrine","budgetbot"],["memory","scribe"],["memory","herald"],["memory","budgetbot"],["memory","pcfo"],["memory","cos"],["memory","codex"],["memory","hermes"],["memory","divorce"],["memory","taxbot"],["memory","sched"],["memory","scout"],["memory","sentinel"],["memory","p1"],["memory","p2"],["memory","p3"],["memory","p4"],["memory","fs"],["fs","cfg"],["fs","f1"],["fs","f2"],["fs","f3"],["cfg","f4"],["cfg","f5"],["f4","f6"],["f5","f6"],["hermes","codex"],["hermes","cos"]];
+const FILL = { core:"#c45b7a", doctrine:"#8b74c7", agent:"#c9a24a", shard:"#c45b7a", infra:"#c57a3a", file:"#5fb3a3" };
